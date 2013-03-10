@@ -1,0 +1,24 @@
+<h1>Results</h1>
+
+<div class="row">
+		<table class="table">
+		  <tr>
+		    <th>Poster</th>
+		    <th>Movie</th>
+		    <th>Year</th>
+		    <th>Critics</th>
+		    <th>Audience</th>
+		  </tr>
+
+		<% @search.movies.each do |movie| %>
+		  <tr>
+		  	<td> <%= image_tag movie.posters.thumbnail %> </td>
+		    <td><p><%= link_to movie.name, '/torrent?' + { search: movie.name }.to_query %></p></td>
+		    <td><p><%= movie.year %></p></td>
+		    <td><p><%= movie.scores.critics_score %></p></td>
+		    <td><p><%= movie.scores.audience_score %></p></td>
+		  </tr>
+		<% end %>
+		</table>  
+</div>
+    

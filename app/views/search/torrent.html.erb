@@ -1,0 +1,25 @@
+<h1>Torrents</h1>
+
+<div class="row">
+  	<table class="table">
+		  <tr>
+		    <th>File</th>
+		    <th>Size</th>
+		    <th>Seeds</th>
+		    <th>Lechers</th>
+		    <th>Download</th>
+		  </tr>
+
+		<% @search.torrents.each do |torrent| %>
+		  <tr>
+		  	<td> <%= raw torrent['title'] %> </td>
+		    <td><p><%= torrent['size'] %></p></td>
+		    <td><p><%= torrent['Seeds'] %></p></td>
+		    <td><p><%= torrent['leechers'] %></p></td>
+		    <td><p><%= link_to 'Download', torrent['enclosure_url'] %></p></td>
+		  </tr>
+		<% end %>
+		</table>  
+           
+
+</div>

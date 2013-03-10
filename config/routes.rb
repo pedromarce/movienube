@@ -1,4 +1,16 @@
 Nubemovie::Application.routes.draw do
+
+  
+  resources :search, only: [:new, :create]
+
+  root :to =>            'search#new'
+
+  match '/result',   to: 'static_pages#result'
+ 
+  match '/search',   to: 'search#search'
+
+  match '/torrent',  to: 'search#torrent'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
