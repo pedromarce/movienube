@@ -3,9 +3,7 @@ class Search
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :query
-
-  validates_presence_of :query
+  attr_accessor :query, :typeList
 
   def initialize(attributes = {})
   	attributes.each do |name, value|

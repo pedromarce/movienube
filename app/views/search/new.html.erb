@@ -1,8 +1,26 @@
 <h2>Movies</h2>
 
 <div class="row">
-  <div class="center span6 offset3">
-    <%= form_for(:search, url: search_path) do |f| %>
+
+	<div class="span3">
+    <ul>
+      <li class="btn btn-mini btn-block">
+        <%= link_to 'In Theaters', '/list?' + { typeMethod: 'in_theaters', typeList: 'In Theaters' }.to_query %>
+      </li>
+      <li class="btn btn-mini btn-block">
+        <%= link_to 'Opening Movies', '/list?' + { typeMethod: 'opening_movies', typeList: 'Opening Movies' }.to_query %>
+      </li>
+      <li class="btn btn-mini btn-block">
+        <%= link_to 'New DVD releases', '/list?' + { typeMethod: 'new_dvd_releases', typeList: 'New DVD releases' }.to_query %>
+      </li>
+      <li class="btn btn-mini btn-block">
+        <%= link_to 'Curent DVD releases', '/list?' + { typeMethod: 'current_dvd_releases', typeList: 'Curent DVD releases' }.to_query %>
+      </li>
+    </ul>
+  </div>
+  <div class="center span6">
+
+  	<%= form_for(:search, url: search_path) do |f| %>
 
       <%= f.text_field :query %>
 

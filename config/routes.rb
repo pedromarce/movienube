@@ -11,6 +11,8 @@ Nubemovie::Application.routes.draw do
 
   match '/torrent',  to: 'search#torrent'
 
+  match '/list',     to: 'search#list'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
